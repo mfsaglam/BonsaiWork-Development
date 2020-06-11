@@ -13,7 +13,7 @@
 		FA5BFA6E246F5634003C6CD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5BFA6C246F5634003C6CD6 /* Main.storyboard */; };
 		FA5BFA70246F5638003C6CD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5BFA6F246F5638003C6CD6 /* Assets.xcassets */; };
 		FA5BFA73246F5638003C6CD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5BFA71246F5638003C6CD6 /* LaunchScreen.storyboard */; };
-		FA5BFA7B246F58A6003C6CD6 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5BFA7A246F58A6003C6CD6 /* Countdown.swift */; };
+		FAC8D2D92490F4A200718CB9 /* Countdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8D2D82490F4A200718CB9 /* Countdown.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		FA5BFA6F246F5638003C6CD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA5BFA72246F5638003C6CD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA5BFA74246F5638003C6CD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA5BFA7A246F58A6003C6CD6 /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countdown.swift; sourceTree = "<group>"; };
+		FAC8D2D82490F4A200718CB9 /* Countdown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Countdown.swift; path = bonsaiWorkDemo/controller/Countdown.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +81,7 @@
 		FAF1AE5F2483BC43007DDCB5 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				FA5BFA7A246F58A6003C6CD6 /* Countdown.swift */,
+				FAC8D2D82490F4A200718CB9 /* Countdown.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 				FA5BFA6B246F5634003C6CD6 /* ViewController.swift in Sources */,
 				FA5BFA67246F5634003C6CD6 /* AppDelegate.swift in Sources */,
 				FA5BFA69246F5634003C6CD6 /* SceneDelegate.swift in Sources */,
-				FA5BFA7B246F58A6003C6CD6 /* Countdown.swift in Sources */,
+				FAC8D2D92490F4A200718CB9 /* Countdown.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

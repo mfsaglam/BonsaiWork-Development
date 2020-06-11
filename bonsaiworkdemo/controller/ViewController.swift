@@ -9,35 +9,38 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    let countdown = Countdown()
-    
+        
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var mainButton: UIButton!
     
+    let workTime = 25
+    let restTime = 5
+    lazy var counter = Countdown(workFor: workTime, restFor: restTime)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        countdown.resetTimer()
-        timeLabel.text = "\(countdown.timeLeft ?? 25)"
+        timeLabel.text = "\(workTime)"
     }
     
     @IBAction func mainButtonPressed(_ sender: UIButton) {
-        countdown.startTimer()
-        countdown.isTimerOff.toggle()
-        mainButton.setTitle(updateButtonText(), for: .normal)
-        countdown.updateTimeLabel = { time in
+        //trigger the timer
+        counter.triggerTimer(initialWorkTime: workTime, initialRestTime: restTime)
+        //update button title depending on the timer
+        mainButton.setTitle(buttonTitle(), for: .normal)
+        //update time label
+        counter.updateTheTitle = { time in
             self.timeLabel.text = "\(time)"
-            self.mainButton.setTitle(self.updateButtonText(), for: .normal)
         }
     }
     
-    func updateButtonText() -> String {
-        if countdown.isTimerOff {
-            return "Start"
-        } else {
+    func buttonTitle() -> String {
+        if counter.isTimerOn {
             return "Stop"
+        } else {
+            return "Start"
         }
     }
+    
     
 }
 
