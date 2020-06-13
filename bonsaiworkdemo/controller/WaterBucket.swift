@@ -10,12 +10,12 @@ import Foundation
 
 class WaterBucket {
     
-    var tree = Bonsai(name: "oak", waterNeed: 1)
+    var tree = Bonsai(waterNeed: 1)
     var waterAmount: Double?
-    var set = 0
+    var todaysSupply = 0
     var updateWaterLabel: ((Double) -> Void)?
     var updateButtonLabel: ((Bool) -> Void)?
-    var feedback:((Bool) -> Void)?
+    var feedback: ((Bool) -> Void)?
     var timer = Timer()
     var isGivingWater = false
     var isRestTime = false
@@ -27,10 +27,10 @@ class WaterBucket {
         if !isRestTime {
             if isGivingWater {
                 stopGivingWater(with: initialWaterAmount)
-                updateWaterLabel?(initialWaterAmount)
+                updateWaterLabel?(initialWaterAmount) //waterLabelClosure !!!
             } else {
                 isGivingWater = true
-                updateButtonLabel?(isGivingWater) // resttime stop update for button
+                updateButtonLabel?(isGivingWater) // resttime stop update for button !!!
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(water), userInfo: initialWaterInfo, repeats: true)
             }
         } else {
@@ -38,7 +38,7 @@ class WaterBucket {
                 stopGivingWater(with: initialRestAmount)
             } else {
                 isGivingWater = true
-                updateButtonLabel?(isGivingWater) // worktime stop update for button
+                updateButtonLabel?(isGivingWater) // worktime stop update for button !!!
                 timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(water), userInfo: initialWaterInfo, repeats: true)
             }
         }
@@ -49,8 +49,8 @@ class WaterBucket {
         isGivingWater = false
         timer.invalidate()
         waterAmount = waterSet
-        updateWaterLabel?(waterSet)
-        updateButtonLabel?(isGivingWater) // start update for button
+        updateWaterLabel?(waterSet) //!!!!
+        updateButtonLabel?(isGivingWater) // start update for button !!!
     }
     
     //MARK: - @objc Timer Method
@@ -83,26 +83,22 @@ class WaterBucket {
     
     func waterAmountCheckForDaily() {
         if let dailyNeed = tree.setNeedDaily {
-            if set < dailyNeed {
-                set += 1
-                print("set increased to \(set)")
+            if todaysSupply < dailyNeed {
+                todaysSupply += 1
+                print("supplyForNow \(todaysSupply)")
             } else {
                 stopGivingWater(with: 0)
                 doneToday = true
-                feedback?(doneToday)
-                tree.checkStatus(for: set)
+                feedback?(doneToday) //!!!
+                tree.checkAge(for: todaysSupply)
             }
         }
     }
     
 //MARK: - Init methods
     
-    init(waterAmount: Double, restAmount: Double) {
-        if !isRestTime {
-            self.waterAmount = waterAmount
-        } else {
-            self.waterAmount = restAmount
-        }
+    init(waterAmount: Double, restAmount: Double) {        
+        self.waterAmount = !isRestTime ? waterAmount : restAmount
     }
     
 //MARK: - Feedback Methods

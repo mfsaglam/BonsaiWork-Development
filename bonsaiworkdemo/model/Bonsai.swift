@@ -10,23 +10,46 @@ import Foundation
 
 struct Bonsai {
     
-    var name: String?
     var setNeedDaily: Int?
     private var age = 0
+    enum healthStatus {
+        case healthy, dying, almostDead, dead
+    }
     
-    mutating func checkStatus(for currentWater: Int) {
+    //MARK: - Checking Methods
+    
+    mutating func checkAge(for currentWater: Int) -> Int {
         if setNeedDaily != nil {
             if currentWater == setNeedDaily! {
                 age += 1
-                print("tree got aged! age at \(age)")
+                return age
+            } else {
+                return age
             }
         } else {
-            print("waterNeed and age is currently nil")
+            fatalError("waterNeed is currently nil")
         }
     }
     
-    init (name: String, waterNeed: Int){
-        self.name = name
+    mutating func checkHealth(lastTime: Int, now: Int) -> healthStatus {
+        let difference = now - lastTime
+        switch difference {
+        case 0:
+            return .healthy
+        case 1:
+            return .healthy
+        case 2:
+            return .dying
+        case 3:
+            return .almostDead
+        default:
+            return .dead
+        }
+    }
+    
+    //MARK: - Init Methods
+    
+    init (waterNeed: Int){
         self.setNeedDaily = waterNeed
     }
     
