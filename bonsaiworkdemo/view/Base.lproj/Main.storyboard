@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,20 +13,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="bonsaiWorkDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="right" axis="vertical" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8tP-HY-Ykr" userLabel="Labels">
-                                <rect key="frame" x="124" y="433.5" width="201" height="183.5"/>
+                                <rect key="frame" x="601" y="159.33333333333337" width="201" height="183.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09:41" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BPQ-gO-9er">
-                                        <rect key="frame" x="25.5" y="0.0" width="175.5" height="83.5"/>
+                                        <rect key="frame" x="25.666666666666629" y="0.0" width="175.33333333333334" height="83.666666666666671"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="70"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="45M-uZ-cue">
-                                        <rect key="frame" x="96" y="91.5" width="105" height="66"/>
+                                        <rect key="frame" x="96" y="91.666666666666657" width="105" height="66"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="45"/>
                                         <state key="normal" title="Start">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,13 +36,28 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enough for today! Go have fun!" textAlignment="right" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hYQ-8M-fl9">
-                                        <rect key="frame" x="0.0" y="165.5" width="201" height="18"/>
+                                        <rect key="frame" x="0.0" y="165.66666666666666" width="201" height="18"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pot" translatesAutoresizingMaskIntoConstraints="NO" id="78W-d7-GOn">
+                                <rect key="frame" x="60" y="20" width="533" height="373"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tree_10_body" translatesAutoresizingMaskIntoConstraints="NO" id="Zk2-CJ-Z5e">
+                                <rect key="frame" x="60" y="21" width="533" height="373"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tree_10_healthy" translatesAutoresizingMaskIntoConstraints="NO" id="ShF-xA-Xoy">
+                                <rect key="frame" x="60" y="20" width="533" height="373"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.51372549019607838" green="0.60784313725490191" blue="0.65490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -53,13 +68,21 @@
                     </view>
                     <connections>
                         <outlet property="feedbackLabel" destination="hYQ-8M-fl9" id="s1N-T9-Wda"/>
+                        <outlet property="leavesImageView" destination="ShF-xA-Xoy" id="Z27-vT-B4s"/>
                         <outlet property="mainButton" destination="45M-uZ-cue" id="iAd-0k-xFg"/>
+                        <outlet property="potImageView" destination="78W-d7-GOn" id="hGq-ST-uYd"/>
+                        <outlet property="treeBodyImageView" destination="Zk2-CJ-Z5e" id="rd0-Vs-wQd"/>
                         <outlet property="waterLabel" destination="BPQ-gO-9er" id="dxX-TU-IyL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="100.35211267605634"/>
+            <point key="canvasLocation" x="133.25892857142856" y="100.00000000000001"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pot" width="533" height="373"/>
+        <image name="tree_10_body" width="533" height="373"/>
+        <image name="tree_10_healthy" width="533" height="373"/>
+    </resources>
 </document>

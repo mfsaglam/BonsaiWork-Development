@@ -31,8 +31,8 @@ struct Bonsai {
         }
     }
     
-    mutating func checkHealth(lastTime: Int, now: Int) -> healthStatus {
-        let difference = now - lastTime
+    mutating func checkHealth(_ daysPassed: Int) -> healthStatus {
+        let difference = daysPassed
         switch difference {
         case 0:
             return .healthy

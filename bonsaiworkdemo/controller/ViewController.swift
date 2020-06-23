@@ -13,20 +13,30 @@ class ViewController: UIViewController {
     @IBOutlet weak var waterLabel: UILabel!
     @IBOutlet weak var mainButton: UIButton!
     @IBOutlet weak var feedbackLabel: UILabel!
+    @IBOutlet weak var potImageView: UIImageView!
+    @IBOutlet weak var treeBodyImageView: UIImageView!
+    @IBOutlet weak var leavesImageView: UIImageView!
     var buttonTitle: String?
     
     let waterAmountPerSupply: Double = 15
     let restAmount: Double = 5
-    let lastOpen = 1
-    let today = 4
+    let daysPassed = 9
     
+    var dateChecker = DateStruct()
     lazy var waterBucket = WaterBucket(waterAmount: waterAmountPerSupply, restAmount: restAmount)
+    
+    //MARK: - ViewController LifeCycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         waterLabel.text = "\(timeString(waterAmountPerSupply))"
         feedbackLabel.alpha = 0
-        let status = waterBucket.tree.checkHealth(lastTime: lastOpen, now: today)
+        dateChecker.saveLastRun()
+        print(dateChecker.difference)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let status = waterBucket.tree.checkHealth(dateChecker.difference)
         updateTreeImage(accordingTo: status)
     }
     
@@ -69,7 +79,11 @@ class ViewController: UIViewController {
     }
     
     func updateTreeImage(accordingTo status: Bonsai.healthStatus) {
-        print("image set to Bonsai_\(status)")
+        if let statusImage = UIImage(named: "tree_10_\(status)") {
+            crossFade(to: statusImage, delay: 0.5)
+        } else {
+            //TODO: Make the tree die in here
+        }
     }
     
     //MARK: - Animation Methods
@@ -81,11 +95,11 @@ class ViewController: UIViewController {
         }, completion: nil)
     }
     
-//    func crossFade(to secondImage: UIImage, delay: TimeInterval) {
-//        let duration = 10.0
-//        UIView.transition(with: imageTree, duration: duration, options: .transitionCrossDissolve,
-//        animations: { self.imageTree.image = secondImage }, completion: nil)
-//    }
+    func crossFade(to secondImage: UIImage, delay: TimeInterval) {
+        let duration = 3.0
+        UIView.transition(with: leavesImageView, duration: duration, options: .transitionCrossDissolve,
+        animations: { self.leavesImageView.image = secondImage }, completion: nil)
+    }
     
 }
 

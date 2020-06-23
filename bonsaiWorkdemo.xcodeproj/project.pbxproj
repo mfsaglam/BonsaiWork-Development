@@ -14,6 +14,7 @@
 		FA5BFA6E246F5634003C6CD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5BFA6C246F5634003C6CD6 /* Main.storyboard */; };
 		FA5BFA70246F5638003C6CD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5BFA6F246F5638003C6CD6 /* Assets.xcassets */; };
 		FA5BFA73246F5638003C6CD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA5BFA71246F5638003C6CD6 /* LaunchScreen.storyboard */; };
+		FAC2BE1824A20D5A0045E6BD /* DateStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2BE1724A20D5A0045E6BD /* DateStruct.swift */; };
 		FAC8D2D92490F4A200718CB9 /* WaterBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8D2D82490F4A200718CB9 /* WaterBucket.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		FA5BFA6F246F5638003C6CD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA5BFA72246F5638003C6CD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA5BFA74246F5638003C6CD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAC2BE1724A20D5A0045E6BD /* DateStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStruct.swift; sourceTree = "<group>"; };
 		FAC8D2D82490F4A200718CB9 /* WaterBucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WaterBucket.swift; path = bonsaiWorkDemo/controller/WaterBucket.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC8D2D82490F4A200718CB9 /* WaterBucket.swift */,
+				FAC2BE1724A20D5A0045E6BD /* DateStruct.swift */,
 				FA380B1824920BB500139E07 /* Bonsai.swift */,
 			);
 			path = model;
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA5BFA6B246F5634003C6CD6 /* ViewController.swift in Sources */,
+				FAC2BE1824A20D5A0045E6BD /* DateStruct.swift in Sources */,
 				FA5BFA67246F5634003C6CD6 /* AppDelegate.swift in Sources */,
 				FA380B1924920BB500139E07 /* Bonsai.swift in Sources */,
 				FA5BFA69246F5634003C6CD6 /* SceneDelegate.swift in Sources */,
