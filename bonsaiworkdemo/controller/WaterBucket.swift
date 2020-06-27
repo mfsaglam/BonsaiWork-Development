@@ -13,24 +13,10 @@ class WaterBucket {
     var updateWaterLabel: ((Int) -> Void)?
     
     var dailyCounter = 0
+    //TODO: REMINDER: dailyCounter looks up that if the number is even or odd. so you may need to multiply it. Because it need 2 times more for one is workTime, other is for restTime
+    var dailyNeed = 4 // this needs to be driven by TREE KIND
     
-    var isWorkTime: Bool {
-        if dailyCounter % 2 == 0 {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    var isTimeRunning: Bool {
-        if timer.isValid {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    //MARK: - Counter Logic Methods
+    //MARK: - Counter Logic Methods and instances
     private var timer = Timer()
     
     func triggerTimer(workTime: Int, restTime: Int) {
@@ -38,7 +24,8 @@ class WaterBucket {
         if isTimeRunning {
             stopTimer(time)
         } else {
-            if dailyCounter < 3 {
+            //TODO: tree dailyNeed needed here
+            if dailyCounter < dailyNeed {
                 startTimer(time)
             } else {
                 print("Enough for today")
@@ -62,6 +49,22 @@ class WaterBucket {
     private func stopTimer(_ currentTime: Int) {
         timer.invalidate()
         updateWaterLabel?(currentTime)
+    }
+    
+    var isTimeRunning: Bool {
+        if timer.isValid {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    var isWorkTime: Bool {
+        if dailyCounter % 2 == 0 {
+            return true
+        } else {
+            return false
+        }
     }
     
 }

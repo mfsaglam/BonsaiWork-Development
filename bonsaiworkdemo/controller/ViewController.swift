@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     //MARK: - VC Instances
     
+    //TODO: These numbers to be driven by the kind of tree or userDefaults
     let waterAmountPerSupply: Int = 15000
     let restAmount: Int = 5000
 
@@ -58,9 +59,7 @@ class ViewController: UIViewController {
             mainButton.setTitle("Start", for: .normal)
         }
     }
-    
-    //MARK: - timerLabel Method
-    
+        
     func timeString(_ time: TimeInterval) -> String {
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
