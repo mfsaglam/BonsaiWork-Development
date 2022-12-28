@@ -52,19 +52,11 @@ class WaterBucket {
     }
     
     var isTimeRunning: Bool {
-        if timer.isValid {
-            return true
-        } else {
-            return false
-        }
+        return timer.isValid 
     }
     
     var isWorkTime: Bool {
-        if dailyCounter % 2 == 0 {
-            return true
-        } else {
-            return false
-        }
+        return dailyCounter % 2 == 0
     }
     
 }
